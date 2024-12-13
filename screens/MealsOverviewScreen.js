@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { View, StyleSheet, FlatList } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import { MEALS } from "../data/dummy_data";
 import IndividualMealItem from "../components/IndividualMealItem";

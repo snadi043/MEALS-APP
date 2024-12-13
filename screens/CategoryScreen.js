@@ -1,4 +1,4 @@
-import { FlatList, Text } from "react-native";
+import { FlatList} from "react-native";
 import { CATEGORIES } from "../data/dummy_data";
 import CategoryListGrid from "../components/CategoryListGrid";
 import { useNavigation } from "@react-navigation/native";
