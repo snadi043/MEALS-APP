@@ -6,7 +6,15 @@ import IndividualMealItem from "../components/IndividualMealItem";
 function MealsOverviewScreen(){
 
     function displayMealItem(itemData){
-        return <IndividualMealItem title={itemData.item.title}/>
+        const item = itemData.item;
+        const props = {
+            title: item.title,
+            imageUrl: item.imageUrl,
+            duration: item.duration,
+            complexity: item.complexity,
+            affordability: item.affordability,
+        }
+        return <IndividualMealItem {...props} />
     }
 
     const route = useRoute();
