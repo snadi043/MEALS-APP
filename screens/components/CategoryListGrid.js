@@ -8,7 +8,7 @@ function CategoryListGrid({title, color}){
                 styles.pressableButton,
                 pressed ? styles.buttonPressed : null,
             ]}>
-            <View style={styles.innerGridContainer}>
+            <View style={[styles.innerGridContainer, {backgroundColor:color}]}>
                 <Text style={styles.textStyles}>{title}</Text>
             </View>
         </Pressable>
@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
         padding: 16,
         alignItems: 'center',
         justifyContent: 'center',
+        borderRadius: 8,
     },
     textStyles:{
         fontWeight: 'bold',
