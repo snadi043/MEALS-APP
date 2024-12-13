@@ -11,6 +11,7 @@ function CategoryScreen(){
     data={CATEGORIES} 
     renderItem={renderItemCategoryList}
     keyExtractor={(item) => item.id}
+    numColumns={2}
     />
 }
 export default CategoryScreen;
