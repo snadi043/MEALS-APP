@@ -18,7 +18,8 @@ export default function App() {
                 headerStyle: {backgroundColor: '#351401'},
                 headerTintColor: 'white',
                 contentStyle: {backgroundColor: '#3f2f25'},
-                // headerBackTitle: 'Back',
+                // headerBackTitle: 'Back',  
+                // default option to display it as "Back", but now it is the previous screen title.// 
                 }}>
             <Stack.Screen 
               name="MealsCategories" 
