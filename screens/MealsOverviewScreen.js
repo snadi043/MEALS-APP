@@ -6,19 +6,6 @@ import { useLayoutEffect } from "react";
 
 function MealsOverviewScreen(){
 
-    function displayMealItem(itemData){
-        const item = itemData.item;
-        const mealItemProps = {
-            id: item.id,
-            title: item.title,
-            imageUrl: item.imageUrl,
-            duration: item.duration,
-            complexity: item.complexity,
-            affordability: item.affordability,
-        }
-        return <IndividualMealItem {...mealItemProps} onPressMealCard={()=>navigation.navigate('MealDetails', {mealId: mealItemProps.id})}/>
-    }
-
     const route = useRoute();
     const navigation = useNavigation();
     const catId = route.params.categoryId;
@@ -32,6 +19,21 @@ function MealsOverviewScreen(){
             title: categoryTitle,
         })
     }, [catId, navigation]);
+
+    function displayMealItem(itemData){
+        const item = itemData.item;
+        const mealItemProps = {
+            id: item.id,
+            title: item.title,
+            imageUrl: item.imageUrl,
+            duration: item.duration,
+            complexity: item.complexity,
+            affordability: item.affordability,
+        }
+        return <IndividualMealItem {...mealItemProps} onPressMealCard={()=>navigation.navigate('MealDetails', {mealId: mealItemProps.id})}/>
+    }
+
+    
     
     return (
         <View style={styles.rootContainer}>
