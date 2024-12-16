@@ -1,4 +1,5 @@
 import {View, Text, Image, Pressable, StyleSheet, Platform} from 'react-native';
+import MealItemInfo from './MealItemInfo';
 
 function IndividualMealItem({title, imageUrl, duration, affordability, complexity, onPressMealCard}){
     return <View style={styles.mealItemContainer}>
@@ -11,11 +12,7 @@ function IndividualMealItem({title, imageUrl, duration, affordability, complexit
                     <Image source={{uri: imageUrl}} style={styles.image}/>
                     <Text style={styles.title}>{title}</Text>
                 </View>
-                <View style={styles.itemDetails}>
-                    <Text style={styles.itemDetail}>{duration}m</Text>
-                    <Text style={styles.itemDetail}>{affordability.toUpperCase()}</Text>
-                    <Text style={styles.itemDetail}>{complexity.toUpperCase()}</Text>
-                </View>
+                <MealItemInfo duration={duration} affordability={affordability} complexity={complexity}/>
             </View>
         </Pressable>
     </View>
@@ -48,17 +45,6 @@ const styles = StyleSheet.create({
         fontSize: 18,
         textAlign:'center',
         margin: 8,
-    },
-    itemDetails:{
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: 8
-    },
-    itemDetail:{
-        fontWeight: 'bold',
-        fontSize: 12,
-        marginHorizontal: 8,
     },
     buttonPressed: {
         opacity: 0.5,

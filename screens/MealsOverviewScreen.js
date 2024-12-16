@@ -32,8 +32,6 @@ function MealsOverviewScreen(){
         }
         return <IndividualMealItem {...mealItemProps} onPressMealCard={()=>navigation.navigate('MealDetails', {mealId: mealItemProps.id})}/>
     }
-
-    
     
     return (
         <View style={styles.rootContainer}>
