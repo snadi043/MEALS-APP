@@ -8,14 +8,15 @@ function MealsOverviewScreen(){
 
     function displayMealItem(itemData){
         const item = itemData.item;
-        const props = {
+        const mealItemProps = {
+            id: item.id,
             title: item.title,
             imageUrl: item.imageUrl,
             duration: item.duration,
             complexity: item.complexity,
             affordability: item.affordability,
         }
-        return <IndividualMealItem {...props} />
+        return <IndividualMealItem {...mealItemProps} onPressMealCard={()=>navigation.navigate('MealDetails', {mealId: mealItemProps.id})}/>
     }
 
     const route = useRoute();

@@ -6,13 +6,14 @@ import MealsOverviewScreen from './screens/MealsOverviewScreen';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import MealDetailsScreen from './screens/MealDetailsScreen';
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <>
-      <StatusBar style='dark'/>
+      <StatusBar style='light'/>
         <NavigationContainer>
           <Stack.Navigator screenOptions={{
                 headerStyle: {backgroundColor: '#351401'},
@@ -30,6 +31,7 @@ export default function App() {
               }
               />
             <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} />
+            <Stack.Screen name="MealDetails" component={MealDetailsScreen} />
           </Stack.Navigator>
         </NavigationContainer>
     </>

@@ -1,8 +1,11 @@
 import {View, Text, Image, Pressable, StyleSheet, Platform} from 'react-native';
 
-function IndividualMealItem({title, imageUrl, duration, affordability, complexity}){
+function IndividualMealItem({title, imageUrl, duration, affordability, complexity, onPressMealCard}){
     return <View style={styles.mealItemContainer}>
-        <Pressable android_ripple={{color: '#ccc'}} style={({pressed}) => pressed ? styles.buttonPressed : null}>
+        <Pressable
+            onPress={onPressMealCard} 
+            android_ripple={{color: '#ccc'}} 
+            style={({pressed}) => pressed ? styles.buttonPressed : null}>
             <View style={styles.innerContainer}>
                 <View>
                     <Image source={{uri: imageUrl}} style={styles.image}/>
