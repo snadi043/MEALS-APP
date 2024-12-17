@@ -19,6 +19,7 @@ export default function App() {
                 headerStyle: {backgroundColor: '#351401'},
                 headerTintColor: 'white',
                 contentStyle: {backgroundColor: '#3f2f25'},
+                cardStyle: {backgroundColor: "#24180f",}
                 // headerBackTitle: 'Back',  
                 // default option to display it as "Back", but now it is the previous screen title.// 
                 }}>
