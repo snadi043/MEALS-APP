@@ -1,5 +1,5 @@
 import {View, Text, Image, Pressable, StyleSheet, Platform} from 'react-native';
-import MealItemInfo from './MealItemInfo';
+import MealItemInfo from './MealList/MealItemInfo';
 
 function IndividualMealItem({title, imageUrl, duration, affordability, complexity, onPressMealCard}){
     return <View style={styles.mealItemContainer}>
