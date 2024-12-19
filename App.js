@@ -13,6 +13,9 @@ import MealDetailsScreen from './screens/MealDetailsScreen';
 import FavoritesScreen from './screens/FavoritesScreen';
 import { Ionicons } from '@expo/vector-icons';
 
+import FavoriteContextProvider from './store/context/favorite-context';
+
+
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
@@ -26,8 +29,8 @@ function MyDrawer(){
         drawerLabelStyle: {fontSize: 20, fontWeight: 350},
         drawerStyle: {backgroundColor: '#4f2f25'},
         headerStyle: {backgroundColor: '#351401'},
+        sceneStyle: {backgroundColor: '#3f2f25'},
         headerTintColor: 'white',
-        sceneStyle: {backgroundColor: '#3f2f25'}
       }
     }>
       <Drawer.Screen 
@@ -36,14 +39,14 @@ function MyDrawer(){
         options={
           {
             title: 'All Categories',
-            drawerIcon: ({color, size}) => <Ionicons name="fast-food" color={color} size={size}></Ionicons>
+            drawerIcon: ({color, size}) => <Ionicons name="fast-food" color={color} size={size}/>
           }
           }/>
       <Drawer.Screen 
         name="Favorites" 
         component={FavoritesScreen}
         options={
-          {drawerIcon: ({color, size}) => <Ionicons name="heart" color={color} size={size}></Ionicons>}
+          {drawerIcon: ({color, size}) => <Ionicons name="heart" color={color} size={size}/>}
           }/>
     </Drawer.Navigator>
   )
@@ -51,14 +54,15 @@ function MyDrawer(){
 
 export default function App() {
   return (
-    <>
-      <StatusBar style='light'/>
+  <>
+    <StatusBar style='light'/>
+      <FavoriteContextProvider>
         <NavigationContainer>
           <Stack.Navigator screenOptions={{
                 headerStyle: {backgroundColor: '#351401'},
                 headerTintColor: 'white',
-                // contentStyle: {backgroundColor: '#3f2f25'},
                 cardStyle: {backgroundColor: "#24180f",}
+                // contentStyle: {backgroundColor: '#3f2f25'},
                 // headerBackTitle: 'Back',  
                 // default option to display it as "Back", but now it is the previous screen title.// 
                 }}>
@@ -81,8 +85,8 @@ export default function App() {
               />
           </Stack.Navigator>
         </NavigationContainer>
+      </FavoriteContextProvider>
     </>
-
   );
 }
 
